@@ -1,0 +1,154 @@
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    max-width: 1440px;
+    font-size: 0;
+  }
+  
+  .hero-item,
+  .standard-item {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .news-item {
+    display: inline-block;
+    min-height: 400px;
+    width: 50%;
+  }
+  
+  .hero-item {
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/divinity-ori-sin.jpg);
+    align-content: center;
+    justify-content: center;
+    /* background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/divinity-ori-sin.jpg"); */
+  }
+
+  .hero-item h1 {
+    font-size: 8rem;
+    color: aqua;
+  }
+  
+  .standard-item:nth-child(2) {
+    background-image: url("https://source.unsplash.com/0q90Mumo-xE");
+  }
+  
+  .standard-item:nth-child(3) {
+    background-image: url("https://source.unsplash.com/Xq6ijeemDA0");
+  }
+  
+  .standard-item:nth-child(4) {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/dishonored-large.jpg");
+  }
+  
+  @supports (display: grid) {
+    .news-item {
+      width: auto;
+      min-height: 0;
+    }
+  
+    .hero-item {
+      grid-column: 1/span 2;
+      grid-row: 1/50;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
+    }
+  
+    .standard-item:nth-child(2) {
+      grid-column: 1/span 1;
+      grid-row: 50/100;
+      -webkit-clip-path: polygon(99% 6%, 63% 52%, 82% 52%, 50% 100%, 0 85%, 0 13%);
+  clip-path: polygon(100% 6%, 85% 52%, 94% 52%, 90% 81%, 0 87%, 0 13%);
+      margin-top: -73px;
+    }
+  
+    .standard-item:nth-child(3) {
+      grid-column: 2/span 1;
+      grid-row: 50/100;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 21% 100%, 25% 50%, 7% 49%, 28% 0);
+      clip-path: polygon(100% 0, 100% 100%, 4% 84%, 8% 52%, 0% 52%, 13% 6%);
+      margin-top: -73px;
+      margin-left: -15%;
+      margin-bottom: 18px;
+    }
+  
+    .standard-item:nth-child(4) {
+      grid-column: 1/span 2;
+      grid-row: 100/150;
+      -webkit-clip-path: polygon(45% 0, 100% 15%, 100% 100%, 0 100%, 0 5%);
+      clip-path: polygon(45% 0, 100% 15%, 100% 100%, 0 100%, 0 5%);
+      margin-top: -107px;
+    }
+  } 
+
+  .bubble {
+    position: relative;
+    font-family: 'Tangerine', serif;
+       
+    font-size: 44px;
+    line-height: 35px;
+    width: 300px;
+    height: fit-content;
+    background: #fff;
+    border-radius: 40px;
+    padding: 24px;
+    text-align: center;
+    color: #000;
+    
+  }
+
+  .setup {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .setup .bubble{
+    top: 5%;
+    right: 2%;
+  }
+
+  .delivery .bubble {
+    bottom: 20%;
+    left: 2%;
+
+    
+  }
+
+  .delivery .bubble:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-right: 24px solid #fff;
+    border-left: 12px solid transparent;
+    border-bottom: 12px solid #fff;
+    border-top: 20px solid transparent;
+    left: 175px;
+    top: -29px;
+
+  }
+
+  .delivery {
+    display: flex;
+    flex-direction: column-reverse;
+    
+  }
+  
+  .bubble-bottom-left:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 24px solid #fff;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #fff;
+    border-bottom: 20px solid transparent;
+    left: 32px;
+    bottom: -24px;
+  }
+  
